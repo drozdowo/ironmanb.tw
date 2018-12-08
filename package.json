@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config ./webpack.dev.config.js",
+    "builddev": "webpack --config ./webpack.dev.config.js",
     "startdev": "webpack-dev-server --config ./webpack.dev.config.js"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "webpack": "^4.27.1",
@@ -24,6 +25,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "all": "0.0.0",
-    "package.json": "^2.0.1"
+    "package.json": "^2.0.1",
+    "style-loader": "^0.23.1"
   }
 }
