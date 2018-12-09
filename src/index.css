@@ -1,0 +1,22 @@
+.header {
+    font-size: 24px;
+    background-color: red;
+}
+
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #626c66;
+    width: 100%;
+    height: 100%;
+}
+
+.appBase {
+
+}
+
+* {
+    margin: 0;
+}

@@ -1,8 +1,8 @@
 var path = require('path');
 
 module.exports = {
-    mode: 'production',
-    entry: './app/index.js',
+    mode: 'development',
+    entry: './src/index.js',
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, 'dist'),

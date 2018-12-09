@@ -1,14 +1,7 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-
-class App extends Component{
-    render(){
-        return (
-            <h1 class="header">hello</h1>
-        );
-    }
-}
+import App from './app/app'
 
 const theApp = (
     <div>
