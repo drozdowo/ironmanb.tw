@@ -17,7 +17,7 @@ class App extends Component {
     render(){
         return (
             <div>
-               <IronManSearchBox onTyped={this.onTyped}/>
+               <IronManSearchBox />
             </div>
         );
     }
@@ -29,4 +29,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        dispatch: dispatch
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

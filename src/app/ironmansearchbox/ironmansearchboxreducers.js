@@ -4,9 +4,10 @@ const initialState = {
 }
 
 export default function(state=initialState, action){
-    if (action.type == "CHANGE_VAL"){
+    if (action.type == "USER_TYPED"){
         return {
             ...state,
+            curVal: action.payload
         }
     }
 
