@@ -11,9 +11,10 @@ export function userSearch(){
     }
 }
 
-export function searchFinished(){
+export function searchFinished(payload){
     return {
-        type: 'SEARCH_SUCCESS'
+        type: 'SEARCH_SUCCESS',
+        payload: payload
     }
 }
 

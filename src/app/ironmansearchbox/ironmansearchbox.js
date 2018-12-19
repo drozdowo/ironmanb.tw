@@ -2,16 +2,16 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import * as actions from './ironmansearchboxactions';
 const axios = require('axios');
-import skillData from '../transformdata';
 
 class IronManSearchBox extends Component{
     constructor(props){
         super(props);
         this.onTyped = this.onTyped.bind(this);
         this.isSearching = this.isSearching.bind(this);
+        this.getIronMan = this.getIronMan.bind(this);
     }
     isSearching(){
-        if (this.props.state.searchBox.isSearching){
+        if (this.props.state.isSearching){
             return (
                 <div>
                     searching...
@@ -19,15 +19,52 @@ class IronManSearchBox extends Component{
             );
         }
     }
+    getIronMan(){
+        if (    this.props.state.player.playerFound 
+            && !this.props.state.isSearching){
+            var player = this.props.state.player;
+
+            if (player.ironMan.isUltimateIronMan){
+                return (
+                    <div>
+                        is an ultimate ironman btw
+                    </div>
+                );
+            }
+
+            if (player.ironMan.isHardCoreIronMan){
+                return (
+                    <div>
+                        is a hardcore ironman btw
+                    </div>
+                );
+            }
+
+            if (player.ironMan.isIronMan){
+                return (
+                    <div>
+                        is an ironman btw
+                    </div>
+                );
+            }
+
+            return (
+                <div>
+                    is a normie
+                </div>
+            );
+
+        } 
+    }
     onTyped(event){
         if (event.key === 'Enter'){
             this.props.dispatch(actions.userSearch());
             var that = this;
-            axios.get('https://cors-escape.herokuapp.com/https://secure.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws?player='+event.target.value)
+            //axios.get('https://cors-escape.herokuapp.com/https://secure.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws?player='+event.target.value)
+            axios.get('http://localhost:8080/api/ironmanbtw/getIronMan/'+event.target.value)
             .then(function(response){
                 //success
-                skillData(response.data);
-                that.props.dispatch(actions.searchFinished());
+                that.props.dispatch(actions.searchFinished(response.data));
             })
             .catch(function(err){
                 console.log(err);
@@ -45,6 +82,7 @@ class IronManSearchBox extends Component{
                 onKeyUp={this.onTyped}/>
 
                 {this.isSearching()}
+                {this.getIronMan()}
             </div>
         );
     }
@@ -52,7 +90,7 @@ class IronManSearchBox extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        state: state
+        state: state.searchBox
     }
 }
 

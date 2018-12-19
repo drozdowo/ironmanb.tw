@@ -2,14 +2,13 @@ const initialState = {
     curVal: '',
     doesNameMatch: false,
     isSearching: false,
-    ironMan: {
-        isIronMan: false,
-        isHardCoreIronMan: false,
-        isUltimateIronMan: false
-    }
+    player: {}
 }
 
 export default function(state=initialState, action){
+    
+    console.log(action);
+
     if (action.type === "USER_TYPED"){
         return {
             ...state,
@@ -28,9 +27,7 @@ export default function(state=initialState, action){
         return {
             ...state,
             isSearching: false,
-            isIronMan: action.payload.isIronMan,
-            isHardCoreIronMan: action.payload.isHardCoreIronMan,
-            isUltimateIronMan: action.payload.isUltimateIronMan
+            player: action.payload
         }
     }
 
