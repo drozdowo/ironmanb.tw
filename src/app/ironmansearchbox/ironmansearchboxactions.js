@@ -4,3 +4,21 @@ export function userTyped(val){
         payload: val
     }
 }
+
+export function userSearch(){
+    return {
+        type: 'SEARCH_START'
+    }
+}
+
+export function searchFinished(){
+    return {
+        type: 'SEARCH_SUCCESS'
+    }
+}
+
+export function searchFailed(){
+    return {
+        type: 'SEARCH_FAILED'
+    }
+}

@@ -17,3 +17,5 @@ const theApp = (
 );
 
 ReactDOM.render(theApp, document.getElementById('root'));
+
+///TODO: set up more shit
