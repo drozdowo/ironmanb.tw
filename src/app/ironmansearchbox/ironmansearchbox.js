@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import * as actions from './ironmansearchboxactions';
+import './ironmansearch.css'
 const axios = require('axios');
 
 class IronManSearchBox extends Component{
@@ -13,8 +14,7 @@ class IronManSearchBox extends Component{
     isSearching(){
         if (this.props.state.isSearching){
             return (
-                <div>
-                    searching...
+                <div className="searchLoader">
                 </div>
             );
         }
@@ -76,11 +76,14 @@ class IronManSearchBox extends Component{
     }
     render(){
         return (
-            <div>
+            <div className="searchBox-container">
                 <input
+                className="searchBox"
                 type="textbox"
-                onKeyUp={this.onTyped}/>
-
+                onKeyUp={this.onTyped}
+                maxLength="15"
+                />
+                <div className="spacer"/>
                 {this.isSearching()}
                 {this.getIronMan()}
             </div>
