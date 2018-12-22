@@ -61,7 +61,7 @@ class IronManSearchBox extends Component{
             this.props.dispatch(actions.userSearch());
             var that = this;
             //axios.get('https://cors-escape.herokuapp.com/https://secure.runescape.com/m=hiscore_oldschool_ironman/index_lite.ws?player='+event.target.value)
-            axios.get('http://localhost:8080/api/ironmanbtw/getIronMan/'+event.target.value)
+            axios.get('http://75.98.169.227:8080/api/ironmanbtw/getIronMan/'+event.target.value)
             .then(function(response){
                 //success
                 that.props.dispatch(actions.searchFinished(response.data));
