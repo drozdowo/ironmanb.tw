@@ -31,7 +31,7 @@ class App extends Component {
                 <IronManSearchBox />
                 </div>
                 <div className="page-footer">
-                    ironmanb.tw website by <a href="https://github.com/drozdowo/">https://github.com/drozdowo/</a> (give me bonds pls lmao)
+                    ironmanb.tw hosted and owned by m0tty -- gimmie bonds please lmao
                 </div>
             </div>
         );
