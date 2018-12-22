@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import IronManSearchBox from './ironmansearchbox/ironmansearchbox';
+import './app.css'
 
 class App extends Component {
     constructor(props){
@@ -16,8 +17,22 @@ class App extends Component {
     }
     render(){
         return (
-            <div>
-               <IronManSearchBox />
+            <div className="page-container">
+                <div className="app-container">
+                    <div className="app-header-container">
+                        <div className="scroll-container">
+                        <div className="scroll-blank">regular</div> 
+                        <div className="scroll-ultimate">ultimate</div> 
+                        <div className="scroll-hardcore">hardcore</div> 
+                        </div>
+                        ironmanb.tw
+                    </div>
+                    <div className="spacer"/>
+                <IronManSearchBox />
+                </div>
+                <div className="page-footer">
+                    ironmanb.tw website by m0tty (give me bonds pls lmao)
+                </div>
             </div>
         );
     }
